@@ -23,6 +23,7 @@ const request = axios.create({
 
 // Mock 请求处理函数
 const handleMockRequest = async (config) => {
+  // eslint-disable-next-line no-unused-vars
   const { url, method, data } = config;
   const apiPath = getApiPath(url);
   const params = parseParams(url);
