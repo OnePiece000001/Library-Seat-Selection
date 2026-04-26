@@ -3,10 +3,11 @@
 
 export const mockData = {
   // ==================== 用户登录相关 ====================
-  
+
   // 用户登录
   '/login': (params) => {
-    const { userphone, password } = params;
+    // eslint-disable-next-line no-unused-vars
+    const { userphone } = params;
     // 模拟任意账号密码都能登录
     return {
       code: 1,
@@ -21,7 +22,7 @@ export const mockData = {
   },
 
   // 用户注册
-  '/register': (params) => {
+  '/register': () => {
     return {
       code: 1,
       data: null,
@@ -44,9 +45,9 @@ export const mockData = {
   },
 
   // ==================== 图书相关 ====================
-  
+
   // 获取推荐书籍
-  '/recommentbook': (params) => {
+  '/recommentbook': () => {
     return {
       code: 1,
       data: [
@@ -87,13 +88,13 @@ export const mockData = {
       { book_id: 4, book_no: 'B004', book_name: '设计模式', book_author: 'Erich Gamma', book_img: null, book_desc: '软件设计模式', book_status: '可借阅' },
       { book_id: 5, book_no: 'B005', book_name: 'Clean Code', book_author: 'Robert C. Martin', book_img: null, book_desc: '代码整洁之道', book_status: '可借阅' }
     ];
-    
+
     if (!params.book_name) {
       return { code: 1, data: allBooks, msg: '获取成功' };
     }
-    
-    const filtered = allBooks.filter(book => 
-      book.book_name.includes(params.book_name) || 
+
+    const filtered = allBooks.filter(book =>
+      book.book_name.includes(params.book_name) ||
       book.book_author.includes(params.book_name)
     );
     return { code: 1, data: filtered, msg: '搜索成功' };
@@ -115,7 +116,7 @@ export const mockData = {
   },
 
   // ==================== 座位/桌位相关 ====================
-  
+
   // 获取座位信息
   '/getseat': () => {
     return {
@@ -175,7 +176,7 @@ export const mockData = {
   },
 
   // 获取禁用时间段列表
-  '/getbookingtime': (params) => {
+  '/getbookingtime': () => {
     return {
       code: 1,
       data: ['09:00', '10:00', '14:00', '15:00'], // 已被预约的时间段
@@ -193,19 +194,19 @@ export const mockData = {
   },
 
   // ==================== 预约相关 ====================
-  
+
   // 用户预约信息
   '/bookingmessage': (params) => {
     const currentBookings = [
       { booking_id: 1, user_phone: '13800138000', seat: 'A-01', floor: '1', start_time: '2026-04-26 09:00', end_time: '2026-04-26 12:00', status: '预约中' },
       { booking_id: 2, user_phone: '13800138000', seat: 'A-02', floor: '1', start_time: '2026-04-27 14:00', end_time: '2026-04-27 17:00', status: '预约中' }
     ];
-    
+
     const historyBookings = [
       { booking_id: 3, user_phone: '13800138000', seat: 'B-01', floor: '2', start_time: '2026-04-20 09:00', end_time: '2026-04-20 12:00', status: '已完成' },
       { booking_id: 4, user_phone: '13800138000', seat: 'A-03', floor: '1', start_time: '2026-04-18 14:00', end_time: '2026-04-18 17:00', status: '已取消' }
     ];
-    
+
     return {
       code: 1,
       data: params.historyYOrN === 'Y' ? historyBookings : currentBookings,
@@ -214,7 +215,7 @@ export const mockData = {
   },
 
   // 添加个人预约
-  '/addbooking': (params) => {
+  '/addbooking': () => {
     return {
       code: 1,
       data: { booking_id: Date.now() },
@@ -236,7 +237,7 @@ export const mockData = {
   },
 
   // 删除用户预约
-  '/deletebooking': (params) => {
+  '/deletebooking': () => {
     return {
       code: 1,
       data: null,
@@ -245,7 +246,7 @@ export const mockData = {
   },
 
   // 修改用户预约
-  '/updatebooking': (params) => {
+  '/updatebooking': () => {
     return {
       code: 1,
       data: null,
@@ -254,7 +255,7 @@ export const mockData = {
   },
 
   // ==================== 借阅相关 ====================
-  
+
   // 获取用户图书借阅信息
   '/getuserborrowmsg': (params) => {
     return {
@@ -268,7 +269,7 @@ export const mockData = {
   },
 
   // 借阅书籍
-  '/borrowbook': (params) => {
+  '/borrowbook': () => {
     return {
       code: 1,
       data: null,
@@ -290,7 +291,7 @@ export const mockData = {
   },
 
   // 修改用户图书借阅信息
-  '/updateuserborrow': (params) => {
+  '/updateuserborrow': () => {
     return {
       code: 1,
       data: null,
@@ -299,7 +300,7 @@ export const mockData = {
   },
 
   // 删除用户图书借阅信息
-  '/deleteuserborrow': (params) => {
+  '/deleteuserborrow': () => {
     return {
       code: 1,
       data: null,
@@ -308,9 +309,9 @@ export const mockData = {
   },
 
   // ==================== 收藏相关 ====================
-  
+
   // 获取用户收藏书籍
-  '/getShouCangbook': (params) => {
+  '/getShouCangbook': () => {
     return {
       code: 1,
       data: [
@@ -322,7 +323,7 @@ export const mockData = {
   },
 
   // 添加收藏
-  '/addShouCangbook': (params) => {
+  '/addShouCangbook': () => {
     return {
       code: 1,
       data: null,
@@ -331,7 +332,7 @@ export const mockData = {
   },
 
   // 删除收藏
-  '/deleteShouCangbook': (params) => {
+  '/deleteShouCangbook': () => {
     return {
       code: 1,
       data: null,
@@ -340,9 +341,9 @@ export const mockData = {
   },
 
   // ==================== 管理操作 ====================
-  
+
   // 添加楼层
-  '/addfloor': (params) => {
+  '/addfloor': () => {
     return {
       code: 1,
       data: null,
@@ -351,7 +352,7 @@ export const mockData = {
   },
 
   // 删除楼层
-  '/deletefloor': (params) => {
+  '/deletefloor': () => {
     return {
       code: 1,
       data: null,
@@ -360,7 +361,7 @@ export const mockData = {
   },
 
   // 保存桌子座位信息
-  '/savedeskseat': (params) => {
+  '/savedeskseat': () => {
     return {
       code: 1,
       data: null,
@@ -369,7 +370,7 @@ export const mockData = {
   },
 
   // 删除图书
-  '/deletebook': (params) => {
+  '/deletebook': () => {
     return {
       code: 1,
       data: null,
@@ -378,7 +379,7 @@ export const mockData = {
   },
 
   // 删除座位
-  '/deleteseat': (params) => {
+  '/deleteseat': () => {
     return {
       code: 1,
       data: null,
@@ -387,7 +388,7 @@ export const mockData = {
   },
 
   // 删除桌位
-  '/deletedesk': (params) => {
+  '/deletedesk': () => {
     return {
       code: 1,
       data: null,
@@ -396,7 +397,7 @@ export const mockData = {
   },
 
   // 添加图书
-  '/addbook': (params) => {
+  '/addbook': () => {
     return {
       code: 1,
       data: { book_id: Date.now() },
@@ -405,7 +406,7 @@ export const mockData = {
   },
 
   // 修改图书
-  '/updatebook': (params) => {
+  '/updatebook': () => {
     return {
       code: 1,
       data: null,
@@ -414,7 +415,7 @@ export const mockData = {
   },
 
   // 修改个人信息
-  '/updateuserinfo': (params) => {
+  '/updateuserinfo': () => {
     return {
       code: 1,
       data: null,
@@ -423,9 +424,9 @@ export const mockData = {
   },
 
   // ==================== 签到/二维码 ====================
-  
+
   // 扫码签到
-  '/qianDao': (params) => {
+  '/qianDao': () => {
     return {
       code: 1,
       data: null,
@@ -443,7 +444,7 @@ export const mockData = {
   },
 
   // ==================== 可视化数据 ====================
-  
+
   // 获取可视化数据
   '/getvisualization': () => {
     return {
