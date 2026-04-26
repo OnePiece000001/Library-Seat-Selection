@@ -1,50 +1,30 @@
 // Mock 数据文件 - 用于 GitHub Pages 静态部署
 // 当后端服务不可用时，使用此文件中的模拟数据
 
-// 预设的测试账号
-const TEST_ACCOUNTS = {
-  // 管理员账号
-  'admin': {
-    user_phone: 'admin',
-    user_name: '管理员',
-    user_img: null,
-    identity: 'admin'
-  },
-  '13800138000': {
-    user_phone: '13800138000',
-    user_name: '张三',
-    user_img: null,
-    identity: 'user'
-  },
-  '13800138001': {
-    user_phone: '13800138001',
-    user_name: '李四',
-    user_img: null,
-    identity: 'user'
-  }
-};
-
 export const mockData = {
   // ==================== 用户登录相关 ====================
 
   // 用户登录
   '/login': (params) => {
-    // eslint-disable-next-line no-unused-vars
-    const { userphone } = params;
-
-    // 检查是否是预设账号
-    const account = TEST_ACCOUNTS[userphone];
-    if (account) {
+    const { userphone, password } = params;
+    
+    // 管理员账号
+    if (userphone === 'admin' && password === 'admin') {
       return {
-        code: 1,
-        data: account,
+        code: 200,
+        data: {
+          user_phone: userphone,
+          user_name: '管理员',
+          user_img: null,
+          identity: 'admin'
+        },
         msg: '登录成功'
       };
     }
-
-    // 其他任意账号作为普通用户登录
+    
+    // 普通用户账号 - 任意手机号+密码都能登录
     return {
-      code: 1,
+      code: 200,
       data: {
         user_phone: userphone,
         user_name: '测试用户',
