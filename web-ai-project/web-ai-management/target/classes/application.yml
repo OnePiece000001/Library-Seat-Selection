@@ -1,0 +1,32 @@
+spring:
+
+  #项目名称
+  application:
+    name: web-ai-management
+  #数据库连接配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/library_ai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+mybatis:
+  configuration:
+    #输入log，实现运行时出现日志文件
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #输入camel，使用SQL语句后，驼峰名称自动对应，查询的结果会将一样名称的数据封装到对象相应的属性中，如果名称不也一样，使用下面的语句可以将xxx_aaa自动封装到xxxaaa。如create_Time-->createtime
+#    map-underscore-to-camel-case: true
+  #配置事务管理日志级别
+logging:
+    level:
+      org.springframework.jdbc.support.JdbcTransactionManager: debug
+aliyun:
+     oss:
+        endpoint: https://oss-cn-beijing.aliyuncs.com
+        bucketName: java-ai-meng
+        region: cn-beijing
+server:
+  port: 8083

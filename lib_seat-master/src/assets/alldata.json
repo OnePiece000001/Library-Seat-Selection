@@ -1,0 +1,172 @@
+[
+  [
+    {
+      "name": "oppo",
+      "value": 2999
+    },
+    {
+      "name": "vivo",
+      "value": 5999
+    },
+    {
+      "name": "apple",
+      "value": 1500
+    },
+    {
+      "name": "huawei",
+      "value": 1999
+    },
+    {
+      "name": "红魔",
+      "value": 2200
+    },
+    {
+      "name": "诺基亚",
+      "value": 4500
+    }
+  ],
+  [
+    {
+      "name": "oppo销售量",
+      "values": [
+        415,
+        220,
+        136,
+        330,
+        210,
+        420
+      ]
+    },
+    {
+      "name": "vivo销售量",
+      "values": [
+        310,
+        425,
+        118,
+        420,
+        136,
+        315
+      ]
+    },
+    {
+      "name": "apple销售量",
+      "values": [
+        530,
+        112,
+        223,
+        534,
+        298,
+        328
+      ]
+    },
+    {
+      "name": "huawei销售量",
+      "values": [
+        212,
+        523,
+        310,
+        272,
+        423,
+        235
+      ]
+    },
+    {
+      "name": "红魔销售量",
+      "values": [
+        196,
+        237,
+        114,
+        236,
+        313,
+        220
+      ]
+    },
+    {
+      "name": "诺基亚销售量",
+      "values": [
+        125,
+        213,
+        126,
+        136,
+        210,
+        127
+      ]
+    }
+  ],
+  [
+    {
+      "name": "oppo",
+      "todayBuy": 100,
+      "monthBuy": 300,
+      "totalBuy": 800
+    },
+    {
+      "name": "vivo",
+      "todayBuy": 200,
+      "monthBuy": 400,
+      "totalBuy": 900
+    },
+    {
+      "name": "苹果",
+      "todayBuy": 100,
+      "monthBuy": 500,
+      "totalBuy": 1100
+    },
+    {
+      "name": "华为",
+      "todayBuy": 200,
+      "monthBuy": 400,
+      "totalBuy": 900
+    },
+    {
+      "name": "红魔",
+      "todayBuy": 200,
+      "monthBuy": 400,
+      "totalBuy": 900
+    },
+    {
+      "name": "诺基亚",
+      "todayBuy": 200,
+      "monthBuy": 400,
+      "totalBuy": 900
+    }
+  ],
+  [
+    {
+      "name": "今日支付订单",
+      "value": 1234,
+      "icon": "success",
+      "color": "#2ec7c9"
+    },
+    {
+      "name": "今日收藏订单",
+      "value": 210,
+      "icon": "star-on",
+      "color": "#ffb980"
+    },
+    {
+      "name": "今日未支付订单",
+      "value": 170,
+      "icon": "s-goods",
+      "color": "#5ab1ef"
+    },
+    {
+      "name": "本月支付订单",
+      "value": 150,
+      "icon": "success",
+      "color": "#2ec7c9"
+    },
+    {
+      "name": "本月收藏订单",
+      "value": 99,
+      "icon": "star-on",
+      "color": "#ffb980"
+    },
+    {
+      "name": "本月未支付订单",
+      "value": 200,
+      "icon": "s-goods",
+      "color": "#5ab1ef"
+    }
+  ]
+]

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.webaimanagement.mapper.StudentMapper">
+    <select id="findAll" resultType="org.example.webaimanagement.pojo.Student">
+        --             判断的是idea中定义接收参数类中的属性，接口参数名称一致，将参数值赋值给idea中接收参数值的类
+        select * from student
+        <where>
+
+            <if test="userStatus != null">
+                user_status =#{userStatus}
+            </if>
+            <if test="username != null ">
+                and username=#{username}
+            </if>
+            <if test="password != null ">
+                and password=#{password}
+            </if>
+        </where>
+        order by end_learning desc
+    </select>
+
+
+    <delete id="deleteById">
+        delete  from student where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="findAllLogin" resultType="org.example.webaimanagement.pojo.LoginQueryParam">
+        --             判断的是idea中定义接收参数类中的属性，接口参数名称一致，将参数值赋值给idea中接收参数值的类
+        select * from student_login
+        <where>
+
+            <if test="userStatus != null">
+                user_status =#{userStatus}
+            </if>
+            <if test="username != null ">
+                and username=#{username}
+            </if>
+            <if test="password != null ">
+                and password=#{password}
+            </if>
+        </where>
+    </select>
+
+
+
+</mapper>

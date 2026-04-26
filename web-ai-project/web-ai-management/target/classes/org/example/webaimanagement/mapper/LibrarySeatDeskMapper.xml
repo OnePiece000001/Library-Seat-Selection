@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.webaimanagement.mapper.LibrarySeatDeskMapper">
+    <!-- 批量插入桌位信息 -->
+    <insert id="addDesk">
+        insert into desk_info(id, desk_name, desk_no, floor_no, desk_type, desk_x, desk_y) values
+        <foreach collection="deskList" item="desk" separator=",">
+            (#{desk.id},#{desk.desk_name},#{desk.desk_no},#{desk.floor_no},#{desk.desk_type},#{desk.desk_x},#{desk.desk_y})
+        </foreach>
+    </insert>
+
+    <!-- 批量插入座位信息 -->
+    <insert id="addSeat">
+        insert into seat_info(id, seat_name, seat_no, floor_no, seat_x, seat_y) values
+        <foreach collection="seatList" item="seat" separator=",">
+            (#{seat.id},#{seat.seat_name},#{seat.seat_no},#{seat.floor_no},#{seat.seat_x},#{seat.seat_y})
+        </foreach>
+    </insert>
+</mapper>
