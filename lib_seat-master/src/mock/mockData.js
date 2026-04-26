@@ -46,13 +46,15 @@ export const mockData = {
 
   // 获取用户信息
   '/getuserinfo': (params) => {
+    // 根据手机号判断是管理员还是普通用户
+    const isAdmin = params.user_phone === 'admin';
     return {
-      code: 1,
+      code: 200,
       data: {
         user_phone: params.user_phone,
-        user_name: '测试用户',
-        user_img: null,
-        identity: 'user'
+        user_name: isAdmin ? '管理员' : '测试用户',
+        user_picture1: null,
+        user_type: isAdmin ? 1 : 0  // 1 是管理员，0 是普通用户
       },
       msg: '获取成功'
     };
